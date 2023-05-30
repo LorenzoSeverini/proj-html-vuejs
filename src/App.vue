@@ -11,7 +11,7 @@
     components: {
       AppHeader,
       AppMain,
-      AppFooter
+      AppFooter,
     },
 
     data() {
@@ -35,15 +35,15 @@
 <!-- template -->
 <template>
   <header>
-    <AppHeader msg="Header" />
+    <AppHeader />
   </header>
 
-  <main>
-    <AppMain msg="Main" />
+  <main>  
+    <AppMain />
   </main>
   
   <footer>
-    <AppFooter msg="Footer" />
+    <AppFooter />
   </footer>
 
 </template>
@@ -55,18 +55,15 @@
 @use './styles/partials/_mixing' as *;
 
 header {
-  background-color: $color-secondary;
-  padding: 1rem;
+  background-color: $color-primary;
 }
 
 main {
   background-color: $color-primary;
-  padding: 1rem;
 }
 
 footer {
   background-color: $color-secondary;
-  padding: 1rem;
 }
 
 </style>
