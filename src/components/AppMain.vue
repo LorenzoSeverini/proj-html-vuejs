@@ -1,11 +1,28 @@
 <!-- script -->
 <script>
+import SliderSection from './SliderSection.vue'
+import searchCar from './searchCar.vue'
+import MiniCardAuto from './MiniCardAuto.vue'
+import AutoCard from './AutoCard.vue'
+import SellingBuyCar from './SellingBuyCar.vue'
+import Customer from './customer.vue'
+import ResentArticles from './ResentArticles.vue'
 
     export default {
         name: 'AppMain',
+
+        components: {
+            SliderSection,
+            searchCar,
+            MiniCardAuto,
+            AutoCard,
+            SellingBuyCar,
+            Customer,
+            ResentArticles,
+        },
         
         props: {
-            msg: String
+            
         },
 
         data () {
@@ -19,9 +36,13 @@
 
 <!-- template -->
 <template>
-    <div class="app-main">
-        <h1>{{ msg }}</h1>
-    </div>
+    <SliderSection />
+    <searchCar />
+    <MiniCardAuto />
+    <AutoCard />
+    <SellingBuyCar />
+    <Customer />
+    <ResentArticles />
 </template>
 
 <!-- style -->
@@ -30,17 +51,5 @@
 @use '../styles/partials/_variables' as *;
 @use '../styles/partials/_mixing' as *;
 
-.app-main {
-    padding: 1rem;
-}
-
-h1 {
-    color: $color-secondary;
-    font-size: 5rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
 
 </style>
