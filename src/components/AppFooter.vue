@@ -1,11 +1,17 @@
 <!-- script -->
 <script>
 
+import footerino from './footerino.vue'
+
     export default {
         name: 'AppFooter',
+
+        components: {
+            footerino,
+        },
         
         props: {
-            msg: String
+            
         },
 
         data () {
@@ -19,7 +25,10 @@
 
 <!-- template -->
 <template>
-    <h1>{{ msg }}</h1>
+    <footer>
+        <footerino />
+    </footer>
+    
 </template>
 
 <!-- style -->
@@ -28,13 +37,5 @@
 @use '../styles/partials/_variables' as *;
 @use '../styles/partials/_mixing' as *;
 
-h1 {
-    color: $color-tertiary;
-    font-size: 5rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
 
 </style>
