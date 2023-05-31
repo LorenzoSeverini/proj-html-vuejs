@@ -66,15 +66,19 @@
                         ],
                     }, 
 
-                    { title: 'Search'}
+                    { title: 'Search',}
                 ],
             }
         },
 
         data () {
             return {
-                //
+                
             }
+        },
+
+        methods: {
+            // 
         },
     }
 
@@ -87,9 +91,9 @@
     <div class="container">
         <div class="container-caract">
             <div class="container-caract-item" v-for="car in autoCaracteristic" :key="car.title">
-                <div class="container-caract-item-title">
-                    <h1>{{ car.title }}</h1>
-                </div>
+                
+                <h1>{{ car.title }}</h1>
+               
             </div>
         </div>
     </div>
@@ -117,22 +121,26 @@
 
         .container-caract-item {
             width: 100%;
-            margin-bottom: 1rem;
             border: 1px solid $color-black;
             border-radius: 0.8rem;
+            padding: 3rem;
+            cursor: pointer;
 
-            .container-caract-item-title {
-                width: 100%;
-                padding: 2rem;
-                cursor: pointer;
+            &:hover {
+                background-color: $color-secondary;
+            }
 
-                h1 {
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    color: $color-black;
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $color-black;
+
+                &:hover {
+                    color: $color-white;
                 }
             }
         }
     }
 }
+
 </style>
