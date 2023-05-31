@@ -1,26 +1,76 @@
 <!-- slider -->
 <script>
 
-export default {
-    name: 'SliderSection',
-    
-    props: {
-        slider : {
-            type: Array,
-            default: () => [
-                { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/slider-autocar-5.jpg', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
-                { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/slider-autocar-6.jpg', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
-            ],
-        },
+    export default {
+        name: 'SliderSection',
         
-    },
+        props: {
+            
+            slider : {
+                type: Array,
+                default: () => [
+                    { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/slider-autocar-5.jpg', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
+                    { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/slider-autocar-6.jpg', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
+                    { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw1111.avif', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
+                    { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/ferrari2.avif', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
+                    { image: '/src/assets/AutoCar Projcet Asset/imgs/assets/mercedes.jpeg', title: 'Buy And Sell Your Car At Its Value', text:'Find the right price and dealer', a: 'Learn More'},
+                ],
+            },
+            autoplayInterval: {
+                type: Number,
+                default: 3000, // 3 seconds
+            },
+        },
 
-    data () {
-        return {
-            //
-        }
-    },
-}
+        data () {
+            return {
+                currentIndex: 0,
+                autoplayTimer: null,
+            }
+        },
+
+        computed: {
+            currentImage() {
+                return this.slider[this.currentIndex]
+            },
+
+        },
+
+        mounted () {
+           this.startAutoplay();
+        },
+
+        beforeUnmount() {
+            this.stopAutoplay();
+        },
+
+        methods: {
+
+            previousImage() {
+                this.currentIndex = (this.currentIndex - 1 + this.slider.length) % this.slider.length;
+                this.restartAutoplay();
+            },
+
+            nextImage() {
+                this.currentIndex = (this.currentIndex + 1) % this.slider.length;
+            },
+
+            startAutoplay() {
+                this.autoplayTimer = setInterval(() => {
+                    this.nextImage();
+                }, this.autoplayInterval);
+            }, 
+            
+            stopAutoplay() {
+                clearInterval(this.autoplayTimer);
+            },
+
+            restartAutoplay() {
+                this.stopAutoplay();
+                this.startAutoplay();
+            },
+        },
+    }
 
 </script>
 
@@ -30,22 +80,17 @@ export default {
 
     <div class="slider-section">
         <div class="slider-section-container">
-            <div class="slider-section-container-slider">
-                <!-- arrow left and right -->
-                <div class="slider-section-container-slider-arrow-left">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="slider-section-container-slider-arrow-right">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-                <div class="slider-section-container-slider-item" v-for="slide in slider" :key="slide.title">
-                    <img :src="slide.image" alt="slider image">
-                    <div class="slider-section-container-slider-item-content">
-                        <h1>{{ slide.title }}</h1>
-                        <p>{{ slide.text }}</p>
-                        <a href="#">{{ slide.a }}</a>
-                    </div>
-                </div>
+            <div class="slider">
+                <img :src="currentImage.image" :alt="currentImage.title">
+                <button class="previous" @click="previousImage"><a class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></a></button>
+                <button class="next" @click="nextImage"><a class="fa-solid fa-arrow-right fa-2xl" style="color: #ffffff;"></a></button>
+            </div>
+            <div class="slider-section-container-slider-item-content">
+                <h1>{{ currentImage.title }}</h1>
+                <p>{{ currentImage.text }}</p>
+                <a href="#">{{ currentImage.a }}
+                    <span class="fa-solid fa-arrow-right"></span>
+                </a>
             </div>
         </div>
     </div>
@@ -60,7 +105,7 @@ export default {
 
 .slider-section {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 135px);
     background-color: $color-primary;
     position: relative;
     overflow: hidden;
@@ -69,112 +114,109 @@ export default {
     align-items: center;
     z-index: 1;
 
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 2;
-    }
-
-    &-container {
+    .slider-section-container {
         width: 100%;
         height: 100%;
         position: relative;
-        z-index: 3;
-    }
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
 
-    &-container-slider {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        z-index: 3;
-    }
-
-    .slider-section-container-slider-arrow-left {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        padding-left: 3rem;
-        transform: translateY(-50%);
-        color: $color-white;
-        font-size: 4rem;
-        cursor: pointer;
-        z-index: 100;
-
-        &:hover {
-            color: $color-primary;
-        }
-    }
-
-    .slider-section-container-slider-arrow-right {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        padding-right: 3rem;
-        transform: translateY(-50%);
-        color: $color-white;
-        font-size: 4rem;
-        cursor: pointer;
-        z-index: 100;
-
-        &:hover {
-            color: $color-primary;
-        }
-    }
-
-    &-container-slider-item {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        z-index: 3;
-
-        img {
+        .slider {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            .next {
+                width: 7rem;
+                height: 7rem;
+                margin-right: 2.5rem;
+                position: absolute;
+                background-color: transparent;
+                border: none;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                z-index: 100;  
+            }
+
+            .previous {
+                width: 7rem;
+                height: 7rem;
+                margin-left: 2.5rem;
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                z-index: 100;   
+            }
+
+            .next:hover, .previous:hover {
+                background-color: $color-tertiary;
+                border-radius: 50%;
+                transition: all 0.2s ease-in-out;
+                
+            }
         }
 
-        &-content {
+        .slider-section-container-slider-item-content {
+            width: 30%;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            bottom: 35%;
+            left: 5%;
+            padding: 2rem;
             color: $color-white;
-            text-align: center;
-            z-index: 3;
+            z-index: 100;
 
             h1 {
-                font-size: 3rem;
+                font-size: 5rem;
                 font-weight: 700;
                 margin-bottom: 1rem;
             }
 
             p {
-                font-size: 1.5rem;
-                font-weight: 400;
-                margin-bottom: 1rem;
+                font-size: 2rem;
+                margin-bottom: 5rem;
             }
 
             a {
-                font-size: 1.5rem;
-                font-weight: 400;
+                font-size: 2rem;
                 color: $color-white;
                 text-decoration: none;
-                border: 1px solid $color-white;
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
+                padding-bottom: 0.5rem;
                 transition: all 0.3s ease-in-out;
-                cursor: pointer;
+                padding-left: 3rem;
+
 
                 &:hover {
-                    background-color: $color-white;
-                   
+                    color: $color-primary;
+                    text-decoration: underline;
                 }
             }
         }
     }
 }
-
 </style>
