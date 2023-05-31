@@ -1,11 +1,9 @@
 <!-- Script -->
 <script>
-
   export default  {
     name: 'AppHeader',
     
     props: {
-      // props with nav link and logo image path, title 
 
       links : {
         type: Array,
@@ -22,11 +20,11 @@
 
       image : {
         type: String,
-        default: () => '/src/assets/AutoCar Projcet Asset/imgs/assets/logo-autocar11.png'
+        default: () => '/src/assets/AutoCar Projcet Asset/imgs/assets/logo-autocar11.png' 
       },
 
-      button : {
-        type: String,
+      Icon : {
+        type: Array,
         default: () => [
           { image: '/src/assets/AutoCar Projcet Asset/padlock.png', text: 'My Account'},
           { image: '/src/assets/AutoCar Projcet Asset/add.png', text: 'Add Car'},
@@ -59,11 +57,15 @@
     </div>
     <div class="nav-bar-buttons">
       <ul>
-        <li v-for="btn in button" :key="btn.text">
+        <li v-for="btn in Icon" :key="btn.text">
           <img :src="btn.image" alt="button">
           <span>{{ btn.text }}</span>
         </li>
       </ul>
+    </div>
+    <!-- add an hamburger menu -->
+    <div class="hamburger">
+      <a class="fa-solid fa-bars"></a>
     </div>
   </div>
 </template>
@@ -78,16 +80,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height:150px;
   background-color: $color-primary;
-  color: $color-black;
+  color: $color-secondary;
   font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin : 0 12.5rem;
+  max-width: 140rem;
+  margin: 3.125rem auto;
 
   .nav-bar-logo {
     width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .nav-bar-logo img {
@@ -105,9 +110,10 @@
 
       li {
         a {
-          color: $color-black;
+          color: $color-secondary;
           text-decoration: none;
           transition: all 0.3s ease-in-out;
+          font-size: 1.3rem;
 
           &:hover {
             text-decoration: underline;
@@ -134,14 +140,30 @@
         gap: 1rem;
         align-items: center;
         justify-content: center;
+        border: 1px solid $color-secondary;
+        background-color: $color-secondary;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
 
         img {
           width: 2rem;
+          // change color to white using invert!
+          filter: invert(100%);
+        }
+
+        span {
+          color: $color-primary;
         }
       }
     }
   }
 
-
+  .hamburger {
+    color: $color-secondary;
+    font-size: 4rem;
+    cursor: pointer;
+  }
 }
 </style>
