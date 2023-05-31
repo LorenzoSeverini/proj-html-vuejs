@@ -10,25 +10,25 @@
                 default: () => [
                     {
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-1-300x180.jpg',
-                        date: '12.05.2021',
+                        date: '17.04.2023',
                         title: 'Why is BMW loved?',
                         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.',
                     },
                     {
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-2-300x180.jpg',
-                        date: '12.05.2021',
+                        date: '05.05.2023',
                         title: 'How solid is Audi?',
                         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.',
                     },
                     {
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-6-300x180.jpg',
-                        date: '12.05.2021',
+                        date: '29.12.2022',
                         title: 'What brand is Skoda?',
                         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.', 
                     },
                     {
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-5-300x180.jpg',
-                        date: '12.05.2021',
+                        date: '12.03.2023',
                         title: 'Is the Auris diesel?',
                         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.', 
                     },
@@ -44,6 +44,13 @@
 
     <div class="container">
         <div class="titles">
+            <div class="circle">
+                <div class="circle-dashed">
+                    <div class="circle-white">
+                        <a class="fa-regular fa-thumbs-up fa-2xl" style="color: #f4f6fb;"></a>
+                    </div>
+                </div>
+            </div>
             <div class="title">Resent Articles</div>
             <div class="subtitle">Useful information about car.</div>
         </div>
@@ -84,6 +91,36 @@
         gap: 2rem;
         padding: 5rem;
 
+        .circle {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            background-color: $color-secondary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .circle-dashed {
+                border: 3px dashed $color-primary;
+                width: 8rem;
+                height: 8rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .circle-white {
+                    border: 3px solid $color-primary;
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
         .title {
             font-size: 3.125rem;
             font-weight: 700;
@@ -102,9 +139,8 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        padding: 5rem;
         max-width: 140rem;
-        margin: 3.125rem auto;
+        margin: 3.125rem auto 10rem auto;
 
         .articles-card {
             width: 25%;
@@ -114,7 +150,7 @@
             align-items: center;
             gap: 2rem;
             padding: 2rem;
-            border: 1px solid $color-tertiary;
+            // border: 1px solid $color-tertiary;
             border-radius: 1rem;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 0.5rem 1rem rgba($color-tertiary, 0.2);
