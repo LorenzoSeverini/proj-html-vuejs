@@ -152,7 +152,7 @@
     margin: 3.125rem auto;
     display: flex;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1rem;
    
 
     .col {
@@ -240,7 +240,7 @@
                 padding: 0 1rem;
                 font-size: 1.125rem;
                 font-weight: 400;
-                color: $color-primary;
+                color: $color-secondary;
             }
 
             .btn-subscribe {
@@ -255,7 +255,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: $color-secondary;
+                    background-color: $color-tertiary;
                     color: $color-primary;
                 }
             }
@@ -338,10 +338,10 @@
 
 .copyright {
     width: 100%;
+    padding-bottom: 3rem;
     height: 3.5rem;
     background-color: $color-secondary;
     color: $color-primary;
-    padding: 4rem;
     font-size: 1.125rem;
     font-weight: 400;
     display: flex;
