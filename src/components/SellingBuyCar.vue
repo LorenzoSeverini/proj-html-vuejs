@@ -40,14 +40,14 @@
             </div>
             <img src="../assets/AutoCar Projcet Asset/imgs/assets/divider.jpg" alt="divider">
             <div class="container-vehicles">
-                <img src="../assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg" alt="">
+                <div class="icon"><a class="fa-solid fa-car fa-2xl" style="color: #969696;"></a></div>
                 <div class="text">
                     <h3>Model vehicles</h3>
                     <p>We are sure that you will find vehicles of suitable models on our website.</p>
                 </div>
             </div>
             <div class="container-vehicles">
-                <img src="../assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg" alt="">
+                <div class="icon"><a class="fa-solid fa-wrench fa-2xl" style="color: #969696;"></a></div>
                 <div class="text">
                     <h3>2nd Hand Vehicles</h3>
                     <p>You can put your used vehicles for sale by adding them to our website.</p>
@@ -126,18 +126,16 @@
 
     .container-right {
         width: 50%;
-        padding: 2rem;
+        padding: 8rem;
         display: flex;
         flex-direction: column;
-        
 
+        
         .title {
             font-size: 3.125rem;
             font-weight: 700;
             color: $color-black;
             margin-bottom: 1.875rem;
-
-
         }
 
         .subtitle {
@@ -156,19 +154,21 @@
             display: flex;
             height: 10rem;
 
-            img {
-                width: 10%;
-                height: 30%;
-                margin-right: 1.875rem;
-                fill: rgb(184, 167, 167);
-                color: rgb(204, 75, 75);
-                background-color: black;
+            .icon {
+                width: 15%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
             }
 
             .text {
+                width: 85%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                text-align: left;
 
                 h3 {
                     font-size: 1.875rem;
