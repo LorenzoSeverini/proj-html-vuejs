@@ -18,7 +18,7 @@
             },
             autoplayInterval: {
                 type: Number,
-                default: 3000, // 3 seconds
+                default: 5000, // 5 seconds
             },
         },
 
@@ -177,8 +177,7 @@
             .next:hover, .previous:hover {
                 background-color: $color-tertiary;
                 border-radius: 50%;
-                transition: all 0.2s ease-in-out;
-                
+                transition: all 0.2s ease-in-out;  
             }
         }
 
@@ -204,7 +203,7 @@
 
             a {
                 font-size: 2rem;
-                color: $color-white;
+                color: $color-primary;
                 text-decoration: none;
                 padding-bottom: 0.5rem;
                 transition: all 0.3s ease-in-out;
