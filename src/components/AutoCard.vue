@@ -106,13 +106,17 @@
                         IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                 ]
-            }
+            },
         },
 
         data () {
             return {
-                //
+              
             }
+        },
+
+        methods: {
+    
         },
     }
 
@@ -127,7 +131,7 @@
             <div class="card-container-item" v-for="car in Card" :key="car.name">
                 <div class="card-container-item-content">
                     <img :src="car.image" alt="car image">
-                    <h1>{{ car.name }}</h1>
+                    <h1>{{ car.name }} <sapn class="fa-solid fa-circle-check"></sapn></h1>
                     <p>{{ car.type }}</p>
                     <div class="card-container-item-content-icons">
                         <div class="I-Inside">
@@ -147,6 +151,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
     <!-- button to see more cars -->
@@ -233,11 +238,9 @@
                     a {
                         font-size: 1.2rem;
                         color: $color-primary;
-
-                        &:hover {
-                            color: $color-secondary;
-                        }
-                   }
+                        transition: all 0.3s ease-in-out;
+                        cursor: pointer;
+                    }
                 }
             }
         }
