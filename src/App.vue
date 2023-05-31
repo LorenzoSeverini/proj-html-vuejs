@@ -56,10 +56,17 @@
 
 header {
   background-color: $color-primary;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 main {
   background-color: $color-primary;
+  margin-top: 135px;
 }
 
 footer {
