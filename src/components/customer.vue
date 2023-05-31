@@ -39,6 +39,14 @@
 
     <div class="container">
         <div class="Customer-title">
+            <div class="title-icon">
+                <a class="fa-regular fa-thumbs-up fa-2xl" style="color: #f4f6fb;"></a>
+                <div>
+                    <span class="fa-regular fa-star fa-sm" style="color: #9e9e9e;"></span>
+                    <span class="fa-regular fa-star fa-sm" style="color: #9e9e9e;"></span>
+                    <span class="fa-regular fa-star fa-sm" style="color: #9e9e9e;"></span>
+                </div>
+            </div>
             <div class="title">What Our Customers Saying?</div>
             <div class="subtitle">Opinions from our happy customers.</div>
         </div>
@@ -77,6 +85,13 @@
         align-items: center;
         gap: 2rem;
         padding: 5rem;
+
+        .title-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         .title {
             font-size: 3.125rem;
