@@ -83,12 +83,14 @@
                     font-size: 1.5rem;
                     font-weight: 700;
                     color: $color-secondary;
+                    text-align: center;
                 }
 
                 p {
                     font-size: 1.125rem;
                     font-weight: 400;
                     color: $color-secondary;
+                    text-align: center;
                 }
             }
         }
