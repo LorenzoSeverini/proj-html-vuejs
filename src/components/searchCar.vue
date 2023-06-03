@@ -15,69 +15,81 @@
 
                     { 
                         title: 'All Categories',
-                        type: Array,
-                        default: () => [
-                            { title: 'All Categories', },
-                            { title: 'Cabrio',},
-                            { title: 'Coupe',},
-                            { title: 'Hatchback',},
-                            { title: 'Pick Up',},
-                            { title: 'Sedan',},
-                            { title: 'Suv',},
-                        ],
+                        SelectOption : {
+                            type: Array,
+                            default: () => [
+                                { option: 'All Categories', },
+                                { option: 'Cabrio',},
+                                { option: 'Coupe',},
+                                { option: 'Hatchback',},
+                                { option: 'Pick Up',},
+                                { option: 'Sedan',},
+                                { option: 'Suv',},
+                            ],
+                        },
                         
                     },
                     { 
                         title: 'Brand',
-                        type: Array,
-                        default: () => [
-                            { title: 'BMW'},
-                            { title: 'Seat'},
-                            { title: 'Volswagen'},
-                            { title: 'Skoda'},
-                            { title: 'Audi'},
-                            { title: 'Toyota'}
-                        ],
+                        SelectOption : {
+                            type: Array,
+                            default: () => [
+                                { option: 'BMW'},
+                                { option: 'Seat'},
+                                { option: 'Volswagen'},
+                                { option: 'Skoda'},
+                                { option: 'Audi'},
+                                { option: 'Toyota'}
+                            ],
+                        },
                     },
                     { 
                         title: 'Fuel Type',
-                        type: Array,
-                        default: () => [
-                            { title: 'Diesel'},
-                            { title: 'Gasoline'},
-                            { title: 'Electric'},
-                            { title: 'Hybrid'},
-                        ],
+                        SelectOption: {
+                            type: Array,
+                            default: () => [
+                                { option: 'Diesel'},
+                                { option: 'Gasoline'},
+                                { option: 'Electric'},
+                                { option: 'Hybrid'},
+                            ],
+                        },
                     },
                     { 
                         title: 'Transmission',
-                        type: Array,
-                        default: () => [
-                            { title: 'Automatic'},
-                            { title: 'Manual'},
-                        ],  
+                        SelectOption: {
+                            type: Array,
+                            default: () => [
+                                { option: 'Automatic'},
+                                { option: 'Manual'},
+                            ],
+                        },
                     },
                     { 
                         title: 'status',
-                        type: Array,
-                        default: () => [
-                            { title: 'New'},
-                            { title: 'Used'},
-                        ],
+                        SelectOption: {
+                            type: Array,
+                            default: () => [
+                                { option: 'New'},
+                                { option: 'Used'},
+                            ],
+                        },
                     }, 
                 ],
             }
         },
 
-        data () {
+        data() {
             return {
                 
             }
         },
 
         methods: {
-            // 
+           
         },
+
+       
     }
 
 </script>
@@ -86,11 +98,13 @@
 <template>
 
     <!-- button for all the props  -->
-    <div class="container">
+    <div class="container" id="minicard">
         <div class="container-caract">
             <div class="container-caract-item" v-for="car in autoCaracteristic" :key="car.title">
                 <h1>{{ car.title }}</h1>
-                <span class="fa-solid fa-caret-down fa-sm" style="color: #a6a6a6;"></span>
+                <span @click="toggleDropdown" class="fa-solid fa-caret-down fa-sm" style="color: #a6a6a6;">
+                </span>
+                
             </div>
             <button class="btn-search-car">Search</button>
         </div>
@@ -133,6 +147,18 @@
             h1 {
                 width: 100%;
                 height: 100%;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $color-black;
+                display: flex;
+                justify-content: center;    
+                align-items: center;
+                text-align: center;
+            }
+
+            span {
+                position: absolute;
+                right: 2rem;
                 font-size: 1.5rem;
                 font-weight: 700;
                 color: $color-black;
