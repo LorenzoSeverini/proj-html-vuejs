@@ -42,7 +42,7 @@
 <!-- template -->
 <template>
 
-    <div class="container">
+    <div class="container" id="blog">
         <div class="titles">
             <div class="circle">
                 <div class="circle-dashed">
@@ -89,7 +89,6 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        padding: 5rem;
 
         .circle {
             width: 10rem;
