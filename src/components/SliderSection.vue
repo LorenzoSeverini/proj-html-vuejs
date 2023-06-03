@@ -69,6 +69,15 @@
                 this.stopAutoplay();
                 this.startAutoplay();
             },
+
+            scrollToSection(sectionId) {
+                const section = document.querySelector(sectionId);
+                if (section) {
+                    const yOffset = -200; // Adjust this value as needed
+                    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            },
         },
     }
 
@@ -78,9 +87,9 @@
 <template>
     <!-- slider section with props  -->
 
-    <div class="slider-section">
+    <div class="slider-section" id="home">
         <div class="slider-section-container">
-            <div class="slider">
+            <div class="slider" id="slider">
                 <img :src="currentImage.image" :alt="currentImage.title">
                 <button class="previous" @click="previousImage"><a class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></a></button>
                 <button class="next" @click="nextImage"><a class="fa-solid fa-arrow-right fa-2xl" style="color: #ffffff;"></a></button>
@@ -88,7 +97,7 @@
             <div class="slider-section-container-slider-item-content">
                 <h1>{{ currentImage.title }}</h1>
                 <p>{{ currentImage.text }}</p>
-                <a href="#">{{ currentImage.a }}
+                <a @click="scrollToSection('#selling')">{{ currentImage.a }}
                     <span class="fa-solid fa-arrow-right"></span>
                 </a>
             </div>
@@ -142,6 +151,7 @@
                 top: 0;
                 left: 0;
                 z-index: 1;
+                
             }
 
             .next {
@@ -213,6 +223,7 @@
                 &:hover {
                     color: $color-primary;
                     text-decoration: underline;
+                    cursor: pointer;
                 }
             }
         }
