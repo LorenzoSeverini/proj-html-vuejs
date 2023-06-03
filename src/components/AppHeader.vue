@@ -8,13 +8,13 @@
       links : {
         type: Array,
         default: () => [
-          { name: 'Home', link: '/' },
-          { name: 'About Us', link: '/about' },
-          { name: 'Vehicles', link: '/contact' },
-          { name: 'Dealers', link: '/contact' },
-          { name: 'Packages', link: '/contact'},
-          { name: 'Blog', link: '/contact'},
-          { name: 'Contact', link: '/contact' },
+          { name: 'Home', link: '#home' },
+          { name: 'About Us', link: '#about' },
+          { name: 'Vehicles', link: '#vehicles' },
+          { name: 'Dealers', link: '#selling' },
+          { name: 'Packages', link: '#minicard'},
+          { name: 'Blog', link: '#blog'},
+          { name: 'Contact', link: '#contact' },
         ],
       },
 
@@ -35,8 +35,18 @@
 
     data() {
       return {
-        // 
       }
+    },
+
+    methods: {
+      scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        if (section) {
+          const yOffset = -200;
+          const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      },
     },
   }
 
@@ -51,7 +61,7 @@
     <div class="nav-bar-links">
       <ul>
         <li v-for="link in links" :key="link.name">
-          <a :to="link.link">{{ link.name }}</a>
+          <a @click="scrollToSection(to=link.link)">{{ link.name }}</a>
         </li>
       </ul>
     </div>
