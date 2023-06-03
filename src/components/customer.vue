@@ -4,7 +4,7 @@
         name: 'customer',
 
         props: {
-            customer: {
+            customer: {                
                 type: Array,
                 default: () => [
                     { 
@@ -26,18 +26,17 @@
                         text:'A fast and reliable vehicle selling site. Rare quality website with hundreds of model vehicles.',
                         image:'/src/assets/AutoCar Projcet Asset/imgs/assets/testimonial4-1.png',
                         name:'John',   
-                    }
+                    },  
                 ],
             },
-        }
+        },
     }
-
 </script>
 
 <!-- template -->
 <template>
 
-    <div class="container">
+    <div class="container" id="about">
         <div class="Customer-title">
             <div class="title-icon">
                 <a class="fa-regular fa-thumbs-up fa-2xl" style="color: #f4f6fb;"></a>
@@ -50,6 +49,7 @@
             <div class="title">What Our Customers Saying?</div>
             <div class="subtitle">Opinions from our happy customers.</div>
         </div>
+
         <div class="container-card">
             <div class="customer">
                 <div class="customer-card" v-for="item in customer" :key="item.id">
@@ -60,7 +60,7 @@
                     <div class="customer-card-name">{{ item.name }}</div>
                 </div>
             </div>
-        </div> 
+        </div>  
     </div>
 
 </template>
@@ -84,8 +84,7 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        padding: 5rem;
-
+        
         .title-icon {
             display: flex;
             flex-direction: column;
@@ -133,8 +132,6 @@
                 align-items: center;
                 gap: 2rem;
 
-                // hover
-
                 &:hover {
                     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
                     transition: all 0.3s ease-in-out;
@@ -144,7 +141,7 @@
 
                 .customer-card-text {
                     font-size: 1.5rem;
-                    font-weight: 400;
+                    font-weight: 700;
                     color: $color-black;
                     text-align: center;
                 }
