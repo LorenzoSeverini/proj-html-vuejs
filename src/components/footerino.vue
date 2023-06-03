@@ -1,6 +1,7 @@
 <!-- footer -->
 
 <script>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
     export default {
         name: 'footerino',
@@ -73,13 +74,39 @@
                     }, 
                 ]     
             },
-        }
+        },
+
+        setup() {
+            const showScrollToTop = ref(false);
+
+            const handleScroll = () => {
+                showScrollToTop.value = window.scrollY > window.innerHeight;
+            };
+
+            const scrollToTop = () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            onMounted(() => {
+                window.addEventListener('scroll', handleScroll);
+            });
+
+            onBeforeUnmount(() => {
+                window.removeEventListener('scroll', handleScroll);
+            });
+
+
+            return {
+                showScrollToTop,
+                scrollToTop,
+            };
+        },
     }
 </script>
 
 <!-- template -->
 <template>
-    <div class="container">
+    <div class="container" id="contact">
         <!-- first -->
         <div class="col">
             <div class="first">
@@ -137,6 +164,11 @@
             </div>
         </div>
     </div>
+
+    <!-- button to scroll to the top of the page  -->
+    <button v-show="showScrollToTop" @click="scrollToTop" class="scroll-to-top">
+        <span class="fa-solid fa-arrow-up"></span>
+    </button>
     <!-- copyright -->
     <div class="copyright">@ 2022 Autocar - All Rights Reserved.</div>
 </template>
@@ -333,6 +365,31 @@
                 }
             }
         }
+    }
+}
+
+.scroll-to-top {
+    // create a awesome icon for the button to scroll to the top of the page
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 2rem;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    border: rgb(161, 43, 43) 2px solid;
+
+    &:hover {
+        background-color: $color-tertiary;
+        transition: all 0.3s ease-in-out;
     }
 }
 
