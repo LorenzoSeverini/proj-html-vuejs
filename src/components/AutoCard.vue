@@ -12,98 +12,138 @@
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw-8-series-convertible-technical-data-sp-desktop-400x300.jpg', 
                         name:'BMW M9',
-                        type:'Cabrio', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'Cabrio',  
                         price:'34.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'BMW', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Eletric',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw88-400x300.jpg', 
                         name:'BMW M8',
-                        type:'Cabrio', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'Cabrio',  
                         price:'34.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'BMW', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Diesel',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw442-400x300.jpg', 
                         name:'BMW 4',
-                        type:'Cabrio', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'Cabrio',  
                         price:'34.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'BMW', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Gasoline',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/yeni-ibiza-2-400x300.jpg', 
                         name:'Seat Ibiza',
-                        type:'HatchBack', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'HatchBack',  
                         price:'27.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'Seat', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Eletric',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/makyajli-2022-seat-arona-1-400x300.jpg', 
                         name:'Seat Arona',
-                        type:'SUV', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'SUV',  
                         price:'68.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'Seat', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Gasoline',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/vw-taigo3832-400x300.jpg', 
                         name:'Volswagen Taigo',
-                        type:'SUV', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
+                        type:'SUV',  
                         price:'52.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'Volswagen', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Eletric',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/2019-vw-t-cross-400x300.jpg', 
                         name:'Volswagen T-Cross',
                         type:'SUV', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
                         price:'47.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'Volswagen', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Diesel',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
                     },
                     { 
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/volkswagen-passat-1280x720-1-400x300.jpg', 
                         name:'Volswagen Passat',
                         type:'Sedan', 
-                        IconDollar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-brands-400.svg-fonta.svg', 
                         price:'32.000', 
-                        IconCar:'/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-regular-400.svg-fonta.svg',
                         brand:'Volswagen', 
-                        IconFuel:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-solid-900.svg-fonta.svg',
                         FuelType:'Diesel',
-                        IconHeart:'/Vite-Vue-Starter/src/assets/AutoCar Projcet Asset/imgs/assets/free-fa-v4deprecations.svg-fonta.svg',
+                        
+                    },
+                ]
+            },
+
+            card2: {
+                type: Array,
+                default: () => [
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw-8-series-convertible-technical-data-sp-desktop-400x300.jpg', 
+                        name:'BMW M9',
+                        type:'Cabrio',  
+                        price:'34.000', 
+                        brand:'BMW', 
+                        FuelType:'Eletric',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw88-400x300.jpg', 
+                        name:'BMW M8',
+                        type:'Cabrio',  
+                        price:'34.000', 
+                        brand:'BMW', 
+                        FuelType:'Diesel',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/bmw442-400x300.jpg', 
+                        name:'BMW 4',
+                        type:'Cabrio',  
+                        price:'34.000', 
+                        brand:'BMW', 
+                        FuelType:'Gasoline',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/yeni-ibiza-2-400x300.jpg', 
+                        name:'Seat Ibiza',
+                        type:'HatchBack',  
+                        price:'27.000', 
+                        brand:'Seat', 
+                        FuelType:'Eletric',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/makyajli-2022-seat-arona-1-400x300.jpg', 
+                        name:'Seat Arona',
+                        type:'SUV',  
+                        price:'68.000', 
+                        brand:'Seat', 
+                        FuelType:'Gasoline',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/vw-taigo3832-400x300.jpg', 
+                        name:'Volswagen Taigo',
+                        type:'SUV',  
+                        price:'52.000', 
+                        brand:'Volswagen', 
+                        FuelType:'Eletric',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/2019-vw-t-cross-400x300.jpg', 
+                        name:'Volswagen T-Cross',
+                        type:'SUV', 
+                        price:'47.000', 
+                        brand:'Volswagen', 
+                        FuelType:'Diesel',
+                    },
+                    { 
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/volkswagen-passat-1280x720-1-400x300.jpg', 
+                        name:'Volswagen Passat',
+                        type:'Sedan', 
+                        price:'32.000', 
+                        brand:'Volswagen', 
+                        FuelType:'Diesel',
+                        
                     },
                 ]
             },
@@ -111,12 +151,13 @@
 
         data () {
             return {
-              
+                
             }
         },
 
         methods: {
-    
+            
+            
         },
     }
 
@@ -126,12 +167,12 @@
 <template>
 
     <!-- card -->
-    <div class="card">
+    <div class="card" id="vehicles">
         <div class="card-container">
             <div class="card-container-item" v-for="car in Card" :key="car.name">
                 <div class="card-container-item-content">
                     <img :src="car.image" alt="car image">
-                    <h1>{{ car.name }} <sapn class="fa-solid fa-circle-check"></sapn></h1>
+                    <h1>{{ car.name }} <span class="fa-solid fa-circle-check"></span></h1>
                     <p>{{ car.type }}</p>
                     <div class="card-container-item-content-icons">
                         <div class="I-Inside">
