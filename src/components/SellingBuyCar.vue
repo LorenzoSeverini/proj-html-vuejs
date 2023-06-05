@@ -23,7 +23,7 @@
 <!-- template -->
 <template>
 
-    <div class="container" id="selling">
+     <div class="container" id="selling">
         <div class="container-left">
             <img src="../assets/AutoCar Projcet Asset/imgs/assets/aoutcar-about-1.png" alt="about car">
             <div class="circle-1">24<br> Years of experince</div>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="button-us">
-                <button>Get to know us <span class="fa-solid fa-arrow-right"></span></button>
+                <button><a href="#contact">Get to know us</a><span class="fa-solid fa-arrow-right"></span></button>
             </div>
 
         </div>
@@ -66,7 +66,6 @@
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .container {
     max-width: 140rem;
@@ -92,7 +91,7 @@
             height: 18rem;
             background-color: $color-secondary;
             border-radius: 50%;
-            color: $color-white;
+            color:  $color-primary;
             font-size: 3rem;
             font-weight: 700;
             display: flex;
@@ -110,7 +109,7 @@
             height: 18rem;
             background-color: $color-secondary;
             border-radius: 50%;
-            color: $color-white;
+            color:  $color-primary;
             font-size: 2.5rem;
             font-weight: 700;
             display: flex;
@@ -196,7 +195,7 @@
                 padding: 2rem 2rem;
                 border: none;
                 background-color: $color-secondary;
-                color: $color-white;
+                color:  $color-primary;
                 font-size: 1.5rem;
                 font-weight: 400;
                 cursor: pointer;
@@ -204,6 +203,11 @@
 
                 &:hover {
                     background-color: $color-tertiary;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: $color-primary;
                 }
             }
         }
