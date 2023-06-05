@@ -29,19 +29,19 @@
             }
         },
 
-        computed: {
-            currentImage() {
-                return this.slider[this.currentIndex]
-            },
-
-        },
-
         mounted () {
            this.startAutoplay();
         },
 
         beforeUnmount() {
             this.stopAutoplay();
+        },
+
+        computed: {
+            currentImage() {
+                return this.slider[this.currentIndex]
+            },
+
         },
 
         methods: {
@@ -70,6 +70,7 @@
                 this.startAutoplay();
             },
 
+            // scroll to the top
             scrollToSection(sectionId) {
                 const section = document.querySelector(sectionId);
                 if (section) {
@@ -110,7 +111,6 @@
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .slider-section {
     width: 100%;
@@ -197,7 +197,7 @@
             bottom: 35%;
             left: 5%;
             padding: 2rem;
-            color: $color-white;
+            color: $color-primary;
             z-index: 100;
 
             h1 {

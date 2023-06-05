@@ -35,7 +35,5 @@ import footerino from './footerino.vue'
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
-
 
 </style>

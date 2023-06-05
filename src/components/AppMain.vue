@@ -1,5 +1,6 @@
 <!-- script -->
 <script>
+
 import SliderSection from './SliderSection.vue'
 import searchCar from './searchCar.vue'
 import MiniCardAuto from './MiniCardAuto.vue'
@@ -49,7 +50,5 @@ import ResentArticles from './ResentArticles.vue'
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
-
 
 </style>

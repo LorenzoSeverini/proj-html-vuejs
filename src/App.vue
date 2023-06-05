@@ -52,7 +52,6 @@
 <style lang="scss" scoped>
 
 @use './styles/partials/_variables' as *;
-@use './styles/partials/_mixing' as *;
 
 header {
   background-color: $color-primary;

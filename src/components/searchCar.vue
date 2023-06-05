@@ -117,7 +117,6 @@
 <style lang="scss" scoped> 
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .container {
     max-width: 140rem;

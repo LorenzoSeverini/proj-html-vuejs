@@ -177,7 +177,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .container {
     max-width: 140rem;
@@ -369,7 +368,6 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 }
 
 .scroll-to-top {
-    // create a awesome icon for the button to scroll to the top of the page
     position: fixed;
     bottom: 2rem;
     right: 2rem;
