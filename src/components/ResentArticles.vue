@@ -24,16 +24,28 @@
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-6-300x180.jpg',
                         date: '29.12.2022',
                         title: 'What brand is Skoda?',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.', 
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.',
                     },
                     {
                         image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-5-300x180.jpg',
                         date: '12.03.2023',
                         title: 'Is the Auris diesel?',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.', 
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.',
                     },
                 ],
             },
+
+            secondArticles: {
+                type: Array,
+                default: () => [
+                    {
+                        image: '/src/assets/AutoCar Projcet Asset/imgs/assets/news-autocar-1-300x180.jpg',
+                        date: '17.04.2023',
+                        title: 'Why is BMW loved?',
+                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc ut dignissim cursus. Sed mollis, nisl quis ornare molestie, diam magna.',
+                    },
+                ]
+            }
         },
     }
 
@@ -54,7 +66,9 @@
             <div class="title">Resent Articles</div>
             <div class="subtitle">Useful information about car.</div>
         </div>
+        <!-- card container -->
         <div class="container-articles-card">
+            <!-- card -->
             <div class="articles-card" v-for="item in articles" :key="item.id">
                 <div class="articles-card-image">
                     <img :src="item.image" alt="articles">
@@ -62,9 +76,11 @@
                 <div class="articles-card-date">{{ item.date }}</div>
                 <div class="articles-card-title">{{ item.title }}</div>
                 <div class="articles-card-text">{{ item.text }}</div>
+
                 <div class="button-more">
-                    <button>Show more</button>
+                    <button>Show More</button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -75,7 +91,6 @@
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .container {
     max-width: 140rem;
@@ -149,14 +164,12 @@
             align-items: center;
             gap: 2rem;
             padding: 2rem;
-            // border: 1px solid $color-tertiary;
             border-radius: 1rem;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 0.5rem 1rem rgba($color-tertiary, 0.2);
+            box-shadow: 3rem 4rem 20rem rgba($color-tertiary, 0.7);
 
             &:hover {
-                transform: translateY(-0.5rem);
-                box-shadow: 0 1rem 2rem rgba($color-tertiary, 0.2);
+                transform: translateY(-2rem);
                 cursor: pointer;
             }
 
@@ -188,6 +201,14 @@
                 font-size: 1.25rem;
                 font-weight: 400;
                 color: $color-tertiary;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.25rem;
+                font-weight: 400;
+                color: $color-tertiary;
+                text-align: center;
             }
 
             .button-more {
