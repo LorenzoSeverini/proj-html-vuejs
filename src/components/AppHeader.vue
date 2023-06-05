@@ -35,10 +35,12 @@
 
     data() {
       return {
+        menuOpen: false,
       }
     },
 
     methods: {
+      // scroll to section for the links
       scrollToSection(sectionId) {
         const section = document.querySelector(sectionId);
         if (section) {
@@ -46,6 +48,11 @@
           const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
+      },
+
+      // add an hamburger menu
+      toggleMenu() {
+      this.menuOpen = !this.menuOpen;
       },
     },
   }
@@ -74,8 +81,15 @@
       </ul>
     </div>
     <!-- add an hamburger menu -->
-    <div class="hamburger">
+    <div class="hamburger" @click="toggleMenu">
       <a class="fa-solid fa-bars"></a>
+
+      <!-- ul with links inside, on click go to section -->
+      <ul v-show="menuOpen" class="menu">
+        <li v-for="link in links" :key="link.name">
+          <a @click="scrollToSection(to=link.link)">{{ link.name }}</a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -84,7 +98,6 @@
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .nav-bar {
   display: flex;
@@ -174,6 +187,37 @@
     color: $color-secondary;
     font-size: 4rem;
     cursor: pointer;
+    position: relative;
+  }
+
+  .menu {
+    position: absolute;
+    // open under the hamburger menu
+    top: 5rem;
+    right: 0;
+    background-color: $color-secondary;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+    box-shadow: 0 0 1rem rgba($color-black, 0.2);
+
+
+    li {
+      color: $color-black;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      font-size: 1.3rem;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 }
+
 </style>
