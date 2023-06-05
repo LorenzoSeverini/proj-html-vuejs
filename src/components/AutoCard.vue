@@ -151,16 +151,41 @@
 
         data () {
             return {
-                
+                visibleCars: [],
+                showAll: false
             }
         },
 
+        // created 
+        created() {
+            this.visibleCars = this.Card;
+        },
+
         methods: {
-            
-            
+            // show all cars button
+            showAllCars() {
+                this.showAll = true;
+                this.visibleCars = [...this.Card, ...this.card2];
+            },
+
+            // close all cars button
+            closeAllCars() {
+                this.showAll = false;
+                this.visibleCars = this.Card;
+                this.scrollToSection('vehicles');
+            },
+
+            // scroll to top of the section
+            scrollToSection(id) {
+                const section = document.getElementById(id);
+                if (section) {
+                    const yOffset = -200; // Adjust this value as needed
+                    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            },
         },
     }
-
 </script>
 
 <!-- template -->
@@ -169,7 +194,8 @@
     <!-- card -->
     <div class="card" id="vehicles">
         <div class="card-container">
-            <div class="card-container-item" v-for="car in Card" :key="car.name">
+            <!-- card 1 -->
+            <div class="card-container-item" v-for="car in visibleCars" :key="car.name">
                 <div class="card-container-item-content">
                     <img :src="car.image" alt="car image">
                     <h1>{{ car.name }} <span class="fa-solid fa-circle-check"></span></h1>
@@ -192,12 +218,18 @@
                 </div>
             </div>
         </div>
-        
     </div>
 
+            
+
     <!-- button to see more cars -->
-    <div class="button-to-see-more-cars">
-        <button>Show All Cars</button>
+    <div class="buttons-container">
+      <div class="button-to-see-more-cars" v-if="!showAll">
+        <button @click="showAllCars">Show All Cars</button>
+      </div>
+      <div class="button-to-close-cars" v-else>
+        <button @click="closeAllCars">Close</button>
+      </div>
     </div>
 
 </template>
@@ -206,7 +238,6 @@
 <style lang="scss" scoped>
 
 @use '../styles/partials/_variables' as *;
-@use '../styles/partials/_mixing' as *;
 
 .card {
     max-width: 140rem;
@@ -288,23 +319,51 @@
     }
 }
 
-.button-to-see-more-cars {
+.buttons-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 2rem;
+    
+    .button-to-see-more-cars {
+        display: flex;
+        justify-content: center;
+        margin: 2rem;
 
-    button {
-        padding: 2rem 2rem;
-        border: none;
-        background-color: $color-secondary;
-        color: $color-white;
-        font-size: 1.5rem;
-        font-weight: 400;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+        button {
+            padding: 2rem 2rem;
+            border: none;
+            background-color: $color-secondary;
+            color: $color-white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
 
-        &:hover {
-            background-color: $color-tertiary;
+            &:hover {
+                background-color: $color-tertiary;
+            }
+        }
+    }
+
+    .button-to-close-cars {
+        display: flex;
+        justify-content: center;
+        margin: 2rem;
+
+        button {
+            padding: 2rem 2rem;
+            border: none;
+            background-color: $color-secondary;
+            color: $color-white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $color-tertiary;
+            }
         }
     }
 }
