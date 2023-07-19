@@ -1,6 +1,6 @@
 # AutoCar Project
 
-Web page for AutoCar
+Static front-end Web page for AutoCar
 
 # ScreenShot
 
