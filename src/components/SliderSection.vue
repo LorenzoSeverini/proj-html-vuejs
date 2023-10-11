@@ -87,7 +87,6 @@
 <!-- template -->
 <template>
     <!-- slider section with props  -->
-
     <div class="slider-section" id="home">
         <div class="slider-section-container">
             <div class="slider" id="slider">

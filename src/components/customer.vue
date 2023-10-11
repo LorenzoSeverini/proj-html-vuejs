@@ -241,13 +241,7 @@
             background-color: $color-primary;
             border: 1px solid $color-black;
             border-radius: .625rem;
-            transition: background-color 3s ease-in-out;
             cursor: pointer;
-
-            &:hover {
-                background-color: $color-secondary;
-                transition: background-color 0.3s ease-in-out;
-            }
         }
 
         .slide-button2 {
@@ -256,13 +250,7 @@
             background-color: $color-secondary;
             border: 1px solid $color-black;
             border-radius: .625rem;
-            transition: background-color 3s ease-in-out;
             cursor: pointer;
-
-            &:hover {
-                background-color: $color-primary;
-                transition: background-color 0.3s ease-in-out;
-            }
         }
     }
 }

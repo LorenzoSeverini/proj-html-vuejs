@@ -87,9 +87,7 @@
 
         methods: {
            
-        },
-
-       
+        },       
     }
 
 </script>
@@ -102,9 +100,7 @@
         <div class="container-caract">
             <div class="container-caract-item" v-for="car in autoCaracteristic" :key="car.title">
                 <h1>{{ car.title }}</h1>
-                <span @click="toggleDropdown" class="fa-solid fa-caret-down fa-sm" style="color: #a6a6a6;">
-                </span>
-                
+                <span class="fa-solid fa-caret-down fa-sm" style="color: #a6a6a6;"></span>
             </div>
             <button class="btn-search-car">Search</button>
         </div>
@@ -165,6 +161,7 @@
                 justify-content: center;    
                 align-items: center;
                 text-align: center;
+                position: relative;
             }
         }
 
